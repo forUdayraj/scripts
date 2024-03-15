@@ -13,8 +13,6 @@ echo "3. AwakenOS"
 
 echo "4. DerpfestOS"
 
-echo "5. HentaiOS"
-
 read -p "Target : " target
 
 
@@ -263,24 +261,5 @@ elif [ $target -eq 4 ]; then
     # Motorola Stuff
     git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
 
-elif [ $target -eq 5 ]; then
-    mkdir hentai
-    cd hentai
-    repo init -u https://github.com/hentaiOS/platform_manifest.git -b Ursamoon
-    repo sync -j8
-     #Kernel Tree 
-    git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
-    
-    #Device Tree
-    git clone https://github.com/Shivamingale3/device_hentai_tundra.git device/motorola/tundra  
-    
-    #Vendor Tree
-    git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
-    
-    #QCOM Stuff
-    git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
-    
-    # Motorola Stuff
-    git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
 
 fi
