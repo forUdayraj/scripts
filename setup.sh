@@ -3,17 +3,17 @@ echo "==========================================================================
 echo "=================================================Setting Up Environment===================================================="
 echo "==========================================================================================================================="
 
-echo "What are we building today?"
+#echo "What are we building today?"
 
-echo "1. Project-Matrixx"
+#echo "1. Project-Matrixx"
 
-echo "2. Superior-Extended"
+#echo "2. Superior-Extended"
 
-echo "3. AwakenOS"
+#echo "3. AwakenOS"
 
-echo "4. DerpfestOS"
+#echo "4. DerpfestOS"
 
-read -p "Target : " target
+#read -p "Target : " target
 
 
 hostnamectl
@@ -177,89 +177,89 @@ echo "==========================================================================
 echo "===================================================Getting ROM Source======================================================"
 echo "==========================================================================================================================="
 
-cd ~
-#For Project-Matrixx
-if [ $target -eq 1 ]; then
-    mkdir matrixx
-    cd matrixx
-    repo init -u https://github.com/ProjectMatrixx/android.git -b 14.0 --git-lfs 
-    repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
-    #Kernel Tree 
-    git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
+# cd ~
+# #For Project-Matrixx
+# if [ $target -eq 1 ]; then
+#     mkdir matrixx
+#     cd matrixx
+#     repo init -u https://github.com/ProjectMatrixx/android.git -b 14.0 --git-lfs 
+#     repo sync -c --no-clone-bundle --optimized-fetch --prune --force-sync -j$(nproc --all)
+#     #Kernel Tree 
+#     git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
     
-    #Device Tree
-    git clone https://github.com/Shivamingale3/device_matrixx_tundra.git device/motorola/tundra  
+#     #Device Tree
+#     git clone https://github.com/Shivamingale3/device_matrixx_tundra.git device/motorola/tundra  
     
-    #Vendor Tree
-    git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
+#     #Vendor Tree
+#     git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
     
-    #QCOM Stuff
-    git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
+#     #QCOM Stuff
+#     git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
     
-    # Motorola Stuff
-    git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
+#     # Motorola Stuff
+#     git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
 
-elif [ $target -eq 2 ]; then
-    mkdir superior
-    cd superior
-    repo init -u https://github.com/SuperiorExtended/manifest -b UDC --git-lfs
-    repo sync --force-sync
-    #Kernel Tree 
-    git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
+# elif [ $target -eq 2 ]; then
+#     mkdir superior
+#     cd superior
+#     repo init -u https://github.com/SuperiorExtended/manifest -b UDC --git-lfs
+#     repo sync --force-sync
+#     #Kernel Tree 
+#     git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
     
-    #Device Tree
-    git clone https://github.com/Shivamingale3/device_superior_tundra.git device/motorola/tundra  
+#     #Device Tree
+#     git clone https://github.com/Shivamingale3/device_superior_tundra.git device/motorola/tundra  
     
-    #Vendor Tree
-    git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
+#     #Vendor Tree
+#     git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
     
-    #QCOM Stuff
-    git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
+#     #QCOM Stuff
+#     git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
     
-    # Motorola Stuff
-    git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
-
-
-
-elif [ $target -eq 3 ]; then
-    mkdir awaken
-    cd awaken
-    repo init -u https://github.com/Project-Awaken/android_manifest -b ursa
-    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-    #Kernel Tree 
-    git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
-    
-    #Device Tree
-    git clone https://github.com/Shivamingale3/device_awaken_tundra.git device/motorola/tundra  
-    
-    #Vendor Tree
-    git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
-    
-    #QCOM Stuff
-    git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
-    
-    # Motorola Stuff
-    git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
-
-elif [ $target -eq 4 ]; then
-    mkdir derpfest
-    cd derpfest
-    repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14
-    repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
-     #Kernel Tree 
-    git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
-    
-    #Device Tree
-    git clone https://github.com/Shivamingale3/device_derpfest_tundra.git device/motorola/tundra  
-    
-    #Vendor Tree
-    git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
-    
-    #QCOM Stuff
-    git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
-    
-    # Motorola Stuff
-    git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
+#     # Motorola Stuff
+#     git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
 
 
-fi
+
+# elif [ $target -eq 3 ]; then
+#     mkdir awaken
+#     cd awaken
+#     repo init -u https://github.com/Project-Awaken/android_manifest -b ursa
+#     repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+#     #Kernel Tree 
+#     git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
+    
+#     #Device Tree
+#     git clone https://github.com/Shivamingale3/device_awaken_tundra.git device/motorola/tundra  
+    
+#     #Vendor Tree
+#     git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
+    
+#     #QCOM Stuff
+#     git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
+    
+#     # Motorola Stuff
+#     git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
+
+# elif [ $target -eq 4 ]; then
+#     mkdir derpfest
+#     cd derpfest
+#     repo init -u https://github.com/DerpFest-AOSP/manifest.git -b 14
+#     repo sync -c --force-sync --optimized-fetch --no-tags --no-clone-bundle --prune -j$(nproc --all)
+#      #Kernel Tree 
+#     git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
+    
+#     #Device Tree
+#     git clone https://github.com/Shivamingale3/device_derpfest_tundra.git device/motorola/tundra  
+    
+#     #Vendor Tree
+#     git clone https://github.com/Shivamingale3/vendor_motorola_tundra.git vendor/motorola/tundra
+    
+#     #QCOM Stuff
+#     git clone https://github.com/LineageOS/android_system_qcom.git system/qcom 
+    
+#     # Motorola Stuff
+#     git clone https://github.com/LineageOS/android_hardware_motorola.git hardware/motorola
+
+
+# fi
