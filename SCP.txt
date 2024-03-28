@@ -1,0 +1,1 @@
+scp -i .ssh/private_key user@vm_ip:/file/location /local/destination
