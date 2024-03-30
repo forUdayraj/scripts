@@ -4,7 +4,7 @@
 
 echo "---------------------------------------------------Cloning Vendor Tree-----------------------------------------------------"
 
-git clone https://gitlab.com/shivamingale3/tundra_vendor.git vendor/motorola/tundra
+git clone https://gitlab.com/raghavt20/proprietary_vendor_motorola_tundra vendor/motorola/tundra
 
 echo "---------------------------------------------------Cloning Kernel Tree-----------------------------------------------------"
 git clone https://github.com/raghavt20/kernel_sm8350.git -b thirteen kernel/motorola/tundra 
