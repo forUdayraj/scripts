@@ -20,7 +20,7 @@ hostnamectl
 
 echo "        By : Shivam Ingale"
 
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 
 #Install UNZIP
 echo "==========================================================================================================================="
