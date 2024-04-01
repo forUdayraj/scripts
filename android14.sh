@@ -1,6 +1,6 @@
-#echo "---------------------------------------------------Cloning Device Tree-----------------------------------------------------"
+echo "---------------------------------------------------Cloning Device Tree-----------------------------------------------------"
 
-#git clone https://github.com/PixelOS-Devices/device_motorola_tundra.git -b fourteen device/motorola/tundra 
+git clone https://github.com/Shivamingale3/device_lineage_tundra.git device/motorola/tundra 
 
 echo "---------------------------------------------------Cloning Vendor Tree-----------------------------------------------------"
 
