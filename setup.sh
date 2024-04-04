@@ -126,6 +126,9 @@ if [[ "$(command -v make)" ]]; then
     fi
 fi
 
+sudo apt install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git git-lfs gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5 libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk3.0-gtk3-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
+
+
 echo "Installing repo"
 sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
 sudo chmod a+rx /usr/local/bin/repo
@@ -175,6 +178,20 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 
 sudo cp /etc/fstab /etc/fstab.bak
+
+echo "==========================================================================================================================="
+echo "=====================================================Enabling CCACHE 50G==================================================="
+echo "==========================================================================================================================="
+export USE_CCACHE=1
+export CCACHE_EXEC=/usr/bin/ccache
+ccache -M 50G
+ccache -o compression=true
+
+echo "==========================================================================================================================="
+echo "=============================================================Done=========================================================="
+echo "==========================================================================================================================="
+swapon --show
+echo "==========================================================================================================================="
 
 # echo "==========================================================================================================================="
 # echo "===================================================Getting ROM Source======================================================"
