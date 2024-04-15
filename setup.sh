@@ -147,11 +147,11 @@ echo "==========================================================================
 echo "======================================================Setting Git=========================================================="
 echo "==========================================================================================================================="
 
-git config --global user.email "shivamingale3@gmail.com"
-echo "Email set to : shivamingale3@gmail.com"
+git config --global user.email "for.udayraj@gmail.com"
+echo "Email set to : for.udayraj@gmail.com"
 
-git config --global user.name "Shivamingale3"
-echo "Name set to : Shivamingale3"
+git config --global user.name "forUdayraj"
+echo "Name set to : forUdayraj"
 
 echo "==========================================================================================================================="
 echo "=====================================================Making swap file======================================================"
